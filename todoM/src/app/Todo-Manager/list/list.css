@@ -1,0 +1,275 @@
+:host {
+  display: block;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* layout */
+.list-shell {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* header */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.title h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b6b6b;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #ffffff;
+  border-radius: 999px;
+  font-size: 13px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #7C4DFF;
+}
+
+/* segmented filter */
+.segmented {
+  display: flex;
+  background: #ffffff;
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+}
+
+.seg-btn {
+  border: none;
+  background: transparent;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.seg-btn.active {
+  background: #7C4DFF;
+  color: #ffffff;
+}
+
+/* card */
+.list-card {
+  background: #F3E8FF;
+  padding: 16px;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+/* toolbar */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.1);
+}
+
+.search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
+.icon {
+  opacity: .6;
+}
+
+.ghost {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+/* list */
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.08);
+}
+
+.item.done {
+  opacity: .75;
+}
+
+/* checkbox */
+.check {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.check input {
+  display: none;
+}
+
+.box {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 2px solid #7C4DFF;
+  position: relative;
+}
+
+.check input:checked + .box {
+  background: #7C4DFF;
+}
+
+.check input:checked + .box::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* content */
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.row1 {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.task {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item.done .task {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.meta {
+  font-size: 12px;
+  color: #888;
+}
+
+.row2 {
+  margin-top: 6px;
+}
+
+.status {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.05);
+}
+
+.status.ok {
+  background: rgba(124,77,255,.15);
+  color: #4a2bd6;
+}
+
+/* actions */
+.actions {
+  display: flex;
+}
+
+.icon-btn {
+  border: 1px solid rgba(0,0,0,.12);
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* footer */
+.list-footer {
+  margin-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.kpi {
+  display: flex;
+  gap: 6px;
+  align-items: baseline;
+}
+
+.kpi-label {
+  font-size: 13px;
+  color: #666;
+}
+
+.kpi-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.danger {
+  background: #7C4DFF;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
