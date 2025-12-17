@@ -9,11 +9,11 @@ export interface TodoItem {
 }
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-form',
   standalone: true,
   imports: [FormsModule, NgClass],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './form.html',
+  styleUrl: './form.css'
 })
 
 export class Form {

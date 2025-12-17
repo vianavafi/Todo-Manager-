@@ -4,8 +4,9 @@ import {Form} from './form/form';
 
 @Component({
   selector: 'app-todo-manager',
-  imports: [List, Form],
+  imports: [List, Form,],
   templateUrl: './todo-manager.html',
+  standalone: true
 })
 export class TodoManager {
 
