@@ -65,6 +65,10 @@
 .task-list li.completed span {
   text-decoration: line-through;
   color: #888;
+}
 
-
+button:disabled {
+  background-color: transparent !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
 }

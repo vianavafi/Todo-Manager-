@@ -1,2 +1,2 @@
-<app-form></app-form>
-<app-list></app-list>
+<app-form (sendTask)="getTask($event)"></app-form>
+<app-list [task]="task"></app-list>

@@ -2,7 +2,7 @@
 <main class="todo-container">
   <div class="add-task">
     <input [(ngModel)]="newTask" placeholder="Enter new task"/>
-    <button (click)="addTask()"> Add</button>
+    <button (click)="addTask()" [disabled]="newTask.trim() == ''"> Add</button>
   </div>
 
 </main>

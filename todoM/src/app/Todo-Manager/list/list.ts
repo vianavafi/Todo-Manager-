@@ -1,4 +1,6 @@
-import {Component}  from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {TodoItem} from '../form/form';
+
 @Component({
   selector: 'app-list',
   standalone: true,
@@ -7,6 +9,11 @@ import {Component}  from '@angular/core';
   styleUrl: './list.css'
 })
 
-export class List {
+export class List implements OnChanges {
+  @Input() task: any = null;
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.task) {
+    }
+  }
 }

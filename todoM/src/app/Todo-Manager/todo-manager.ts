@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {List} from './list/list';
-import {Form} from './form/form';
+import {Form, TodoItem} from './form/form';
 
 @Component({
   selector: 'app-todo-manager',
@@ -10,4 +10,9 @@ import {Form} from './form/form';
 })
 export class TodoManager {
 
+  task = {};
+
+  getTask(event: TodoItem) {
+    this.task = event
+  }
 }

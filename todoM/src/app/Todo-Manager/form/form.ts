@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
 export interface TodoItem {
@@ -18,6 +18,7 @@ export interface TodoItem {
 export class Form {
 
   newTask: string = ''
+  @Output() sendTask = new EventEmitter<TodoItem>();
 
   addTask(): void {
     if (this.newTask.trim() !== '') {
@@ -26,7 +27,7 @@ export class Form {
         task: this.newTask,
         completed: false
       }
-
+      this.sendTask.emit(newTodoItem);
       this.newTask = '';
     }
   }
