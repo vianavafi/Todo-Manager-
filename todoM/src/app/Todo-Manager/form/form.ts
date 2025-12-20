@@ -1,12 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 
-export interface TodoItem {
-  id: number;
-  task: string;
-  completed: boolean;
-}
-
 @Component({
   selector: 'app-form',
   standalone: true,
@@ -35,4 +29,10 @@ export class Form {
 
 
 
+}
+
+export interface TodoItem {
+  id: number;
+  task: string;
+  completed: boolean;
 }
