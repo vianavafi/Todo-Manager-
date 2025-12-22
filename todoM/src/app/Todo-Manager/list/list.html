@@ -9,37 +9,42 @@
     <div class="header-actions">
       <div class="pill">
         <span class="dot"></span>
-        <span>0 total</span>
+        <span>{{taskList.length}} total</span>
       </div>
 
       <div class="segmented">
-        <button type="button" class="seg-btn active">All</button>
-        <button type="button" class="seg-btn">Open</button>
-        <button type="button" class="seg-btn">Done</button>
+        <button type="button" (click)="sort('all')" class="seg-btn active">All</button>
+        <button type="button" (click)="sort('done')" class="seg-btn">Open</button>
+        <button type="button" (click)="sort('open')" class="seg-btn">Done</button>
       </div>
     </div>
   </header>
 
   <div class="list-card">
 
-    <div class="toolbar">
+    <!-- toolbar: div -> form -->
+    <form class="toolbar">
       <div class="search">
         <span class="icon">⌕</span>
         <input type="text" placeholder="Search tasks…" />
       </div>
 
       <button class="ghost" type="button">Reload</button>
-    </div>
+    </form>
 
-    <ul class="items">
+    <!-- items: ul/li -> table -->
+    <table class="items">
+      <tbody>
       <!-- item -->
-      <li class="item">
-        <label class="check">
-          <input type="checkbox" />
-          <span class="box"></span>
-        </label>
+      <tr class="item">
+        <td>
+          <label class="check">
+            <input type="checkbox" />
+            <span class="box"></span>
+          </label>
+        </td>
 
-        <div class="content">
+        <td class="content">
           <div class="row1">
             <span class="task">Sample task title</span>
             <span class="meta">#1</span>
@@ -47,21 +52,23 @@
           <div class="row2">
             <span class="status">Open</span>
           </div>
-        </div>
+        </td>
 
-        <div class="actions">
+        <td class="actions">
           <button class="icon-btn" type="button">🗑</button>
-        </div>
-      </li>
+        </td>
+      </tr>
 
       <!-- completed item -->
-      <li class="item done">
-        <label class="check">
-          <input type="checkbox" checked />
-          <span class="box"></span>
-        </label>
+      <tr class="item done">
+        <td>
+          <label class="check">
+            <input type="checkbox" checked />
+            <span class="box"></span>
+          </label>
+        </td>
 
-        <div class="content">
+        <td class="content">
           <div class="row1">
             <span class="task">Completed task</span>
             <span class="meta">#2</span>
@@ -69,25 +76,26 @@
           <div class="row2">
             <span class="status ok">Done</span>
           </div>
-        </div>
+        </td>
 
-        <div class="actions">
+        <td class="actions">
           <button class="icon-btn" type="button">🗑</button>
-        </div>
-      </li>
-    </ul>
+        </td>
+      </tr>
+      </tbody>
+    </table>
 
   </div>
 
   <footer class="list-footer">
     <div class="kpi">
       <span class="kpi-label">Open</span>
-      <span class="kpi-value">1</span>
+      <span class="kpi-value">{{openCount()}}</span>
     </div>
 
     <div class="kpi">
       <span class="kpi-label">Done</span>
-      <span class="kpi-value">1</span>
+      <span class="kpi-value">{{doneCount()}}</span>
     </div>
 
     <button class="danger" type="button">Clear completed</button>

@@ -10,7 +10,7 @@ import {Form, TodoItem} from './form/form';
 })
 export class TodoManager {
 
-  task = {};
+  task: TodoItem | null = null;
 
   getTask(event: TodoItem) {
     this.task = event
